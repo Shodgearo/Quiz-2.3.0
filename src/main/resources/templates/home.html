@@ -1,28 +1,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Good Thymes Virtual Grocery</title>
+        <title>Quiz</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 
     <body>
         <div>
             <form action="/" method="post">
+                <div>name</div>
                 <input type="text" name="name">
+                <div>text</div>
                 <input type="text" name="text">
+                <div>step</div>
                 <input type="text" name="step">
+                <div>score</div>
                 <input type="text" name="score">
+                <br>
                 <button type="submit">Отправить</button>
             </form>
         </div>
 
-    <div>Our list:</div>
-
-        <br>
-
-        <tr th:each="question : ${questions}">
-            <td th:text="${question.id}"></td>
-            <td th:text="${question.name}"></td>
-            <td th:text="${question.text}"></td>
-        </tr>
+        <table>
+            <tr>
+                <td><b>id</b></td>
+                <td><b>name</b></td>
+                <td><b>text</b></td>
+                <td><b>step</b></td>
+            </tr>
+            <tr th:each="question : ${questions}">
+                <td th:text="${question.id}"></td>
+                <td th:text="${question.name}"></td>
+                <td th:text="${question.text}"></td>
+                <td th:text="${question.step}"></td>
+            </tr>
+        </table>
     </body>
 </html>
