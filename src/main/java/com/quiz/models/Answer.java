@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Answer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private int id;
     private String text;
     private boolean is_true;
 

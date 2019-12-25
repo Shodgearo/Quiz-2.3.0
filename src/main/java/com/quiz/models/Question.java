@@ -7,7 +7,7 @@ import java.util.List;
 public class Question {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private int id;
     private String name;
     private String text;
     private String step;
