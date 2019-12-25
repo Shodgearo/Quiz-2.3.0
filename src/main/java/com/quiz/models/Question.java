@@ -19,12 +19,11 @@ public class Question {
     public Question() {
     }
 
-    public Question(String name, String text, String step, int score, List<Answer> answers) {
+    public Question(String name, String text, String step, int score) {
         this.name = name;
         this.text = text;
         this.step = step;
         this.score = score;
-        this.answers = answers;
     }
 
     // Getters and Setters
