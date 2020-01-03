@@ -7,20 +7,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
 @Controller
-public class HomeController {
+@RequestMapping("/admin")
+public class AdminController {
     @Autowired
     private QuestionRepo questionRepo;
 
-    @GetMapping("/")
+    @GetMapping
     public String home(Model model) {
         model.addAttribute("questions", questionRepo.findAll());
 
-        return "home";
+        return "admin";
     }
 
     @PostMapping("/")
@@ -32,6 +34,6 @@ public class HomeController {
         // Чтобы после отправки формы сразу в листе был добавленный вопрос
         model.put("questions", questionRepo.findAll());
 
-        return "home";
+        return "admin";
     }
 }
