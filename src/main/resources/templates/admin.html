@@ -6,7 +6,7 @@
 
     <body>
         <div>
-            <form action="/" method="post">
+            <form action="/admin/" method="post">
                 <div>name</div>
                 <input type="text" name="name">
                 <div>text</div>
@@ -32,6 +32,7 @@
                 <td th:text="${question.name}"></td>
                 <td th:text="${question.text}"></td>
                 <td th:text="${question.step}"></td>
+                <td><a th:href="@{'/admin/question/' + ${question.id}}">Edit</a></td>
             </tr>
         </table>
     </body>

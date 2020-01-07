@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Quiz</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <div>
+            <form action="/admin/question" method="post" th:object="${question}">
+                <div>name</div>
+                <input type="text" name="name" th:field="*{name}">
+                <div>text</div>
+                <input type="text" name="text" th:field="*{text}">
+                <div>step</div>
+                <input type="text" name="step"  th:field="*{step}">
+                <div>score</div>
+                <input type="text" name="score"  th:field="*{score}">
+                <br>
+                <!--<button type="submit">Отправить</button>-->
+            </form>
+        </div>
+
+        <table>
+            <tr>
+                <td><b>id</b></td>
+                <td><b>name</b></td>
+                <td><b>text</b></td>
+                <td><b>step</b></td>
+            </tr>
+            <tr th:each="answer : ${answers}">
+                <td th:text="${answer.id}"></td>
+                <td th:text="${answer.is_true}"></td>
+                <td th:text="${answer.text}"></td>
+                <td><a th:href="@{'/admin/answer/' + ${answer.id}}">Edit</a></td>
+            </tr>
+        </table>
+    </body>
+</html>
